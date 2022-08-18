@@ -1,0 +1,69 @@
+server:
+  port: 8080
+  servlet:
+    contextPath: /test
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    # 初始化模式 always为始终执行初始化，embedded只初始化内存数据库（默认值）,如h2等，never为不执行初始化。
+    initialization-mode: always
+    # 遇到语句错误时是否继续，若已经执行过某些语句，再执行可能会报错，可以忽略，不会影响程序启动
+    continue-on-error: true
+    hikari:
+      # 空闲连接的最大数量
+      minimum-idle: 5
+      # 连接池的最大连接数量,超过最大空闲连接的数量之后,经过上面的idle-timeout后连接数量会恢复到minimum-idle
+      maximum-pool-size: 20
+      # 测试连接语句
+      connection-test-query: SELECT 1 FROM DUAL
+      #connection 事务自动提交,默认就是true
+      auto-commit: true
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 30000
+      # 连接池名称
+      pool-name: SpringBootDemoHikariCP
+      # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟,为了防止连接雪崩,通常设置的比数据库的闲置时间小几秒
+      max-lifetime: 60000
+      # 连接mysql最大超时时间
+      connection-timeout: 30000
+  jackson:
+    # @JsonFormat 日期格式和时区配置
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    #返回结果过滤null值
+    default-property-inclusion: non_null
+logging:
+  level:
+    com.example: debug
+    mapper: trace
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.example.demogenerateexp.entity
+  global-config:
+    # 数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: assign_uuid
+      #驼峰下划线转换
+      table-underline: true
+      #是否开启大写命名，默认不开启
+      #capital-mode: true
+      #逻辑删除配置
+      #logic-delete-value: 1
+      #logic-not-delete-value: 0
+    # 原生配置
+  configuration:
+    # 开启驼峰命名自动转换 ps: user_name 自动转为 userName
+    map-underscore-to-camel-case: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: false
+  params: count=countSql
