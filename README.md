@@ -13,8 +13,16 @@
 │  │  ├─java java 目录
 │  │  │  ├─com.example.scengine 根路径
 │  │  │  │  ├─common 项目公共目录
-│  │  │  │  │  ├─modelconfig 模型层配置文件（包括mybatis-plus防全全表更新，插入修改前拦截等配置）
-│  │  │  │  │  ├─utils 项目工具类（待各位大佬更新）
+│  │  │  │  │  ├─modelconfig 模型层配置目录（包括mybatis-plus防全全表更新，插入修改前拦截等配置）
+│  │  │  │  │  │  ├─MybatisPlusConfig 防全表更新与删除配置
+│  │  │  │  │  │  ├─MyMetaObjectHandler 插入修改前拦截配置自动生成createTime
+│  │  │  │  │  ├─utils 项目工具目录（待各位大佬更新）
+│  │  │  │  │  │  ├─HttpRequestUtil HTTP请求工具类
+│  │  │  │  │  │  ├─RsaUtil RSA加密工具类
+│  │  │  │  │  ├─validconfig 检验插件配置目录
+│  │  │  │  │  │  ├─Insert 校验添加数据分组接口
+│  │  │  │  │  │  ├─Update 校验修改数据分组接口
+│  │  │  │  │  ├─BadRequestExceptionHandler 错误请求异常拦截类（目前拦截了校验错误拦截处理和参数类型转换错误）
 │  │  │  │  │  ├─BasicPageCriteria 分页基础类，包含排序和分页属性
 │  │  │  │  │  ├─PageResultBean 分页结果集封装类
 │  │  │  │  │  ├─ResultBean 普通结果集封装类
@@ -61,3 +69,7 @@ V1.1<br>
 V1.2<br>
 1.模板支持数据库类型为int bigint类型的主键<br>
 2.接口返回格式改成ResultBean下的默认格式
+
+V1.3<br>
+1.实体类增加了@NotBlank，@Length注解的自动生成，并实现了添加修改分组校验功能
+2.控制层增加了@Validated注解，添加校验拦截器
