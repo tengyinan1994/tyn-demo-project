@@ -25,15 +25,19 @@ public class RsaUtil {
         keyPairGen.initialize(1024, new SecureRandom());
         // 生成一个密钥对，保存在keyPair中
         KeyPair keyPair = keyPairGen.generateKeyPair();
-        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();   // 得到私钥
-        RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();  // 得到公钥
+        // 得到私钥
+        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
+        // 得到公钥
+        RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         String publicKeyString = new String(Base64.encodeBase64(publicKey.getEncoded()));
         // 得到私钥字符串
         String privateKeyString = new String(Base64.encodeBase64((privateKey.getEncoded())));
         // 将公钥和私钥保存到Map
-        Map<Integer, String> keyMap = new HashMap<>();
-        keyMap.put(0, publicKeyString);  //0表示公钥
-        keyMap.put(1, privateKeyString);  //1表示私钥
+        Map<Integer, String> keyMap = new HashMap<>(4);
+        //0表示公钥
+        keyMap.put(0, publicKeyString);
+        //1表示私钥
+        keyMap.put(1, privateKeyString);
         return keyMap;
     }
 

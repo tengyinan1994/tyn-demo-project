@@ -12,11 +12,26 @@ import java.io.Serializable;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PageResultBean<T> implements Serializable {
-    private int pageSize = 20; //每页显示几条记录
-    private long totalElements; //总记录数
-    private int totalPages; //总页数
-    private int pageNum; //页号
-    private int count; //当前有几条记录
+    /**
+     * //每页显示几条记录
+     */
+    private int pageSize = 20;
+    /**
+     * 总记录数
+     */
+    private long totalElements;
+    /**
+     * 总页数
+     */
+    private int totalPages;
+    /**
+     * 页号
+     */
+    private int pageNum;
+    /**
+     * 当前有几条记录
+     */
+    private int count;
 
     private static final long serialVersionUID = 1L;
     public static final String NO_LOGIN = "-1";
