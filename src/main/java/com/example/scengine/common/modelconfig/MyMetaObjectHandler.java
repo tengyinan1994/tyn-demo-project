@@ -9,7 +9,9 @@ import java.util.Date;
 @Component
 public class MyMetaObjectHandler implements MetaObjectHandler {
 
-    //mybatis-plus 插入修改前拦截方法
+    /**
+     * mybatis-plus 插入修改前拦截方法
+     */
     @Override
     public void insertFill(MetaObject metaObject) {
         this.strictInsertFill(metaObject, "createTime", Date.class, new Date());
