@@ -19,6 +19,7 @@
 │  │  │  │  │  ├─utils 项目工具目录（待各位大佬更新）
 │  │  │  │  │  │  ├─HttpRequestUtil HTTP请求工具类
 │  │  │  │  │  │  ├─RsaUtil RSA加密工具类
+│  │  │  │  │  │  ├─JsonUtil Json工具类
 │  │  │  │  │  ├─validconfig 检验插件配置目录
 │  │  │  │  │  │  ├─Insert 校验添加数据分组接口
 │  │  │  │  │  │  ├─Update 校验修改数据分组接口
