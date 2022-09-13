@@ -10,6 +10,7 @@ import java.io.Serializable;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @Data
 public class ResultBean<T> implements Serializable {
+
     private static final long serialVersionUID = 1L;
     public static final String NO_LOGIN = "-1";
     public static final String SUCCESS = "SUCCESS";
