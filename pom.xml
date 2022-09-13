@@ -96,11 +96,7 @@
             <version>6.0.9.Final</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>SCengine-login</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
