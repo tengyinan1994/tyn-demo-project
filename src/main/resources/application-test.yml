@@ -7,7 +7,7 @@ spring:
     name: demo
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.92.3.164:3306/pulsar_console_third?ullNamePatter nMatchesAll=true&amp;serverTimezone=GMT%2b8?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://47.92.3.164:3306/sc_engine_demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
     username: iot
     password: 0okmNJI(8uhbVGY&
     type: com.zaxxer.hikari.HikariDataSource
@@ -38,6 +38,12 @@ spring:
     time-zone: GMT+8
     #返回结果过滤null值
     default-property-inclusion: non_null
+  redis:
+    host: 39.97.249.61
+    port: 6379
+    password: redis1
+    timeout: 20000
+    database: 0
 logging:
   level:
     com.example: debug
