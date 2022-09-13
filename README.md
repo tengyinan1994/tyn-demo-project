@@ -72,5 +72,6 @@ V1.2<br>
 2.接口返回格式改成ResultBean下的默认格式
 
 V1.3<br>
-1.实体类增加了@NotBlank，@Length注解的自动生成，并实现了添加修改分组校验功能
-2.控制层增加了@Validated注解，添加校验拦截器
+1.实体类增加了@NotBlank，@Length注解的自动生成，并实现了添加修改分组校验功能<br>
+2.控制层增加了@Validated注解，添加校验拦截器<br>
+3.控制层@RequestMapping注解路径修改，便于快速查找接口
