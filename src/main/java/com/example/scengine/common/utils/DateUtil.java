@@ -88,4 +88,36 @@ public class DateUtil {
         }
         return 0;
     }
+
+    /**
+     * @FunctionName getFirstDayAndLastDayOfTheSpecifiedMonth
+     * @Description 获取指定年指定月的开始天数和结束天数
+     * @Author by
+     * @Date 14/9/2022 下午1:40
+     * @Param [year, month]
+     * @Return java.util.Map<java.lang.String, java.lang.String>
+     **/
+    public static Map<String, String> getFirstDayAndLastDayOfTheSpecifiedMonth(int year, int month) {
+        // 获取当前分区的日历信息
+        Calendar calendar = Calendar.getInstance();
+        // 设置年
+        calendar.set(Calendar.YEAR, year);
+        // 设置月，月份从0开始
+        calendar.set(Calendar.MONTH, month - 1);
+        // 设置为指定月的第一天
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        // 获取指定月第一天的时间
+        Date start = calendar.getTime();
+        // 设置日历天数为当前月实际天数的最大值，即指定月份的最后一天
+        calendar.set(Calendar.DATE, calendar.getActualMaximum(Calendar.DATE));
+        // 获取最后一天的时间
+        Date end = calendar.getTime();
+        // 设置返回信息,返回样式根据需求自行格式化
+        Map<String, String> dateMap = new HashMap<>();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        dateMap.put("start", sdf.format(start));
+        dateMap.put("end", sdf.format(end));
+        return dateMap;
+    }
+
 }
