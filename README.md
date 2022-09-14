@@ -17,9 +17,10 @@
 │  │  │  │  │  │  ├─MybatisPlusConfig 防全表更新与删除配置
 │  │  │  │  │  │  ├─MyMetaObjectHandler 插入修改前拦截配置自动生成createTime
 │  │  │  │  │  ├─utils 项目工具目录（待各位大佬更新）
+│  │  │  │  │  │  ├─DateUtil 日期工具类
 │  │  │  │  │  │  ├─HttpRequestUtil HTTP请求工具类
-│  │  │  │  │  │  ├─RsaUtil RSA加密工具类
 │  │  │  │  │  │  ├─JsonUtil Json工具类
+│  │  │  │  │  │  ├─RsaUtil RSA加密工具类
 │  │  │  │  │  ├─validconfig 检验插件配置目录
 │  │  │  │  │  │  ├─Insert 校验添加数据分组接口
 │  │  │  │  │  │  ├─Update 校验修改数据分组接口
@@ -75,4 +76,5 @@ V1.3<br>
 1.实体类增加了@NotBlank，@Length注解的自动生成，并实现了添加修改分组校验功能<br>
 2.控制层增加了@Validated注解，添加校验拦截器<br>
 3.控制层@RequestMapping注解路径修改，便于快速查找接口<br>
-4.ResultBean和PageResultBean 修改为lombok形式，简化代码
+4.ResultBean和PageResultBean 修改为lombok形式，简化代码<br>
+5.模板实体类主键@NotNull注解message换成通用返回
