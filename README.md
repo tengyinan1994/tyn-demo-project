@@ -77,4 +77,5 @@ V1.3<br>
 2.控制层增加了@Validated注解，添加校验拦截器<br>
 3.控制层@RequestMapping注解路径修改，便于快速查找接口<br>
 4.ResultBean和PageResultBean 修改为lombok形式，简化代码<br>
-5.模板实体类主键@NotNull注解message换成通用返回
+5.模板实体类主键@NotNull注解message换成通用返回<br>
+6.控制层删除方法添加校验
