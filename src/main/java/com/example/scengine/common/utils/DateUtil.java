@@ -338,7 +338,7 @@ public final class DateUtil {
      * @Author by
      * @Date 13/9/2022 下午5:50
      * @Param [findDaysStr] yyyy-MM-dd格式字符串
-     * @Return java.lang.String 星期一为1，星期二为2....日期异常返回0,在isTrue为ture是返回数字，false时返回数字
+     * @Return java.lang.String 星期一为1，星期二为2....日期异常返回0,在isTrue为ture是返回数字，false时返回汉字
      **/
     private static String getDateWeek(String findDaysStr, Boolean isTrue) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
