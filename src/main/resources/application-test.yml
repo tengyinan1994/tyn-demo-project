@@ -6,10 +6,10 @@ spring:
   application:
     name: demo
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.92.3.164:3306/sc_engine_demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
-    username: iot
-    password: 0okmNJI(8uhbVGY&
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.64.9.9:9558/sc_engine_demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+    username: root
+    password: b3tx@4!yJ^fDXaQv
     type: com.zaxxer.hikari.HikariDataSource
     # 初始化模式 always为始终执行初始化，embedded只初始化内存数据库（默认值）,如h2等，never为不执行初始化。
     initialization-mode: always
@@ -39,9 +39,9 @@ spring:
     #返回结果过滤null值
     default-property-inclusion: non_null
   redis:
-    host: 39.97.249.61
-    port: 6379
-    password: redis1
+    host: 10.64.9.9
+    port: 	9557
+    password: drZ^pEYz45@aykNA
     timeout: 20000
     database: 0
 logging:

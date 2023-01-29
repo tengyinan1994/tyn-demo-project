@@ -79,3 +79,11 @@ V1.3<br>
 4.ResultBean和PageResultBean 修改为lombok形式，简化代码<br>
 5.模板实体类主键@NotNull注解message换成通用返回<br>
 6.控制层删除方法添加校验
+
+V1.4<br>
+1.分页类优化<br>
+2.模板生成代码报黄问题优化(使用固定返回的类型)<br>
+3.实体类和分页实体类增加@JsonSerialize(注解防止主键为integer时过大问题)<br>
+4.pom文件增加Docker打包插件依赖<br>
+5.根目录下添加dockerfile文件<br>
+6.application-test修改配置

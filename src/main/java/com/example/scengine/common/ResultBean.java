@@ -1,6 +1,5 @@
 package com.example.scengine.common;
 
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
@@ -19,7 +18,6 @@ public class ResultBean<T> implements Serializable {
     private String returnMsg = "success";
     private String returnCode = SUCCESS;
 
-    @JsonUnwrapped
     private T data;
 
     public ResultBean() {
