@@ -103,6 +103,23 @@
             <type>maven-plugin</type>
         </dependency>
 
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>SCengine-login</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ch.log</groupId>
+            <artifactId>log_factory</artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+
 
     </dependencies>
 
@@ -147,36 +164,36 @@
                 </executions>
             </plugin>
             <!-- 使用Maven插件直接将应用打包为一个Docker镜像 -->
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <!-- 这里使用新版dockerfile-maven-plugin插件 -->
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>1.2.2</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <imageName>${project.artifactId}</imageName><!--镜像名,注意:这里的镜像名一定要小写，如果你的应用名字是大写会报错的-->
-                    <imageTags>
-                        <imageTag>latest</imageTag>
-                    </imageTags>
-                    <dockerDirectory>${project.basedir}</dockerDirectory><!--Dockerfile所在的目录-->
-                    <dockerHost>http://10.49.253.20:2375</dockerHost><!--docker所在的宿主机地址,或者填写http://yourip:2375-->
-                    <resources>
-                        <resource><!--这里配置的就是打包后jar所在的位置-->
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory><!--构建的class文件路径 一般是target-->
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                &lt;!&ndash; 这里使用新版dockerfile-maven-plugin插件 &ndash;&gt;-->
+<!--                <artifactId>docker-maven-plugin</artifactId>-->
+<!--                <version>1.2.2</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <imageName>${project.artifactId}</imageName>&lt;!&ndash;镜像名,注意:这里的镜像名一定要小写，如果你的应用名字是大写会报错的&ndash;&gt;-->
+<!--                    <imageTags>-->
+<!--                        <imageTag>latest</imageTag>-->
+<!--                    </imageTags>-->
+<!--                    <dockerDirectory>${project.basedir}</dockerDirectory>&lt;!&ndash;Dockerfile所在的目录&ndash;&gt;-->
+<!--                    <dockerHost>http://10.49.253.20:2375</dockerHost>&lt;!&ndash;docker所在的宿主机地址,或者填写http://yourip:2375&ndash;&gt;-->
+<!--                    <resources>-->
+<!--                        <resource>&lt;!&ndash;这里配置的就是打包后jar所在的位置&ndash;&gt;-->
+<!--                            <targetPath>/</targetPath>-->
+<!--                            <directory>${project.build.directory}</directory>&lt;!&ndash;构建的class文件路径 一般是target&ndash;&gt;-->
+<!--                            <include>${project.build.finalName}.jar</include>-->
+<!--                        </resource>-->
+<!--                    </resources>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

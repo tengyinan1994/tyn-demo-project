@@ -7,13 +7,13 @@ spring:
     name: demo
   data:
     mongodb:
-      uri: mongodb://root:scyq!765@10.64.9.9:9554/?authSource=admin
+      uri: mongodb://iot:0okmNJI(8uhbVGY&@47.92.3.164:2701/?authSource=affordable_house
       database: log
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.64.9.9:9558/sc_engine_demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
-    username: root
-    password: b3tx@4!yJ^fDXaQv
+    url: jdbc:mysql://47.92.3.164:3306/sc_engine_demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+    username: iot
+    password: 0okmNJI(8uhbVGY&
     type: com.zaxxer.hikari.HikariDataSource
     # 初始化模式 always为始终执行初始化，embedded只初始化内存数据库（默认值）,如h2等，never为不执行初始化。
     initialization-mode: always
@@ -43,9 +43,9 @@ spring:
     #返回结果过滤null值
     default-property-inclusion: non_null
   redis:
-    host: 10.64.9.9
-    port: 9557
-    password: drZ^pEYz45@aykNA
+    host: 192.168.124.47
+    port: 6379
+    # password: drZ^pEYz45@aykNA
     timeout: 20000
     database: 0
 logging:
