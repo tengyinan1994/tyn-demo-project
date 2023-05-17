@@ -86,3 +86,7 @@ log:
     mysql:
       disabled: true
     login-enabled: true
+
+oauth2:
+  enabled: false
+
