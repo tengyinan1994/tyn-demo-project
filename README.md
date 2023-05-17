@@ -87,3 +87,11 @@ V1.4<br>
 4.pom文件增加Docker打包插件依赖<br>
 5.根目录下添加dockerfile文件<br>
 6.application-test修改配置
+
+V1.5<br>
+1.控制层方法请求注解改成@PostMapping<br>
+2.实体类减少分页实体类，增加请求实体类和响应实体类<br>
+3.服务层移除服务接口类，简化代码<br>
+4.dao层减少原生mybatis方法，推荐用mybatis-plus方法<br>
+5.mapper文件减少原生sql，简化代码<br>
+6.其他细节调整
