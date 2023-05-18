@@ -56,9 +56,9 @@ public class PageResultBean<T> implements Serializable {
 
     public static final String NO_PERMISSION = "2";
 
-    private String message = "success";
+    private String returnMessage = "success";
 
-    private String code = SUCCESS;
+    private String returnCode = SUCCESS;
 
     private Map<String, Object> otherData;
 
