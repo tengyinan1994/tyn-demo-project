@@ -43,9 +43,9 @@ spring:
     #返回结果过滤null值
     default-property-inclusion: non_null
   redis:
-    host: 192.168.124.47
-    port: 6379
-    # password: drZ^pEYz45@aykNA
+    host: 47.92.3.164
+    port: 28008
+    password: 0okmNJI(8uhbVGY&
     timeout: 20000
     database: 0
 logging:
@@ -89,4 +89,8 @@ log:
 
 oauth2:
   enabled: false
+
+auth:
+  client:
+    ignoreUrl: /user/list
 
