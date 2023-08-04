@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8084
   servlet:
     contextPath: /test
 spring:
@@ -11,7 +11,7 @@ spring:
       database: log
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.92.3.164:3306/sc_engine_demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://47.92.3.164:3306/sc_engine_login?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
     username: iot
     password: 0okmNJI(8uhbVGY&
     type: com.zaxxer.hikari.HikariDataSource
@@ -60,7 +60,7 @@ mybatis-plus:
     # 数据库相关配置
     db-config:
       #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
-      id-type: assign_uuid
+      id-type: ID_WORKER
       #驼峰下划线转换
       table-underline: true
       #是否开启大写命名，默认不开启
@@ -90,7 +90,12 @@ log:
 oauth2:
   enabled: false
 
-auth:
-  client:
-    ignoreUrl: /user/list
+#auth:
+#  client:
+#    ignoreUrl: /user/list,/role/list,/abcd/**
+
+defaultLoginUser:
+  userId: 1554658901800079362
+
+
 
